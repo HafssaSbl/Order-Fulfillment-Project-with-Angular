@@ -1,0 +1,47 @@
+<button class="btn-new" routerLink="/stockage">Stockage Entant</button>
+<button class="btn-new" routerLink="/stockage">Stockage Sortant</button>
+<br>
+<br>
+
+<input  placeholder="Search" type="text" [(ngModel)]="quantite_entrant" (input)="search()"/>
+
+
+<table>
+
+  <thead>
+
+  <tr>
+
+    <th>quantite_entrant</th>
+
+    <th>quantite_sortant</th>
+
+    <th>quantite_Actuel</th>
+
+    <th>fourniseur</th>
+
+
+
+  </tr>
+
+  </thead>
+
+  <tbody>
+
+  <tr *ngFor="let stockage of stockages">
+
+    <td>{{stockage.quantite_entrant}}</td>
+
+    <td>{{stockage.quantite_sortant}}</td>
+
+    <td>{{stockage.quantite_Actuel}}</td>
+    <td>{{stockage.fourniseur}}</td>
+
+    <td><button class="btn-update" routerLink="/stockage/{{stockage.id}}">Modifier</button>
+      <button class="btn-delete" (click)="deleteStockage(stockage.id)">Delete</button>
+    </td>
+  </tr>
+
+  </tbody>
+
+</table>

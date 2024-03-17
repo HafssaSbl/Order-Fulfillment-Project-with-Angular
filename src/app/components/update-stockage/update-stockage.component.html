@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="form-container">
+    <h2 class="form-title">Modifier un Stockage</h2>
+    <form [formGroup]="updateStockageForm">
+      <div class="form-group">
+        <label for="quantite_entrant">quantite_entrant</label>
+        <input type="text" id="quantite_entrant" name="quantite_entrant" required formControlName="quantite_entrant">
+      </div>
+      <div class="form-group">
+        <label for="quantite_sortant">quantite_sortant</label>
+        <input type="text" id="quantite_sortant" name="quantite_sortant" required formControlName="quantite_sortant">
+      </div>
+      <div class="form-group">
+        <label for="quantite_Actuel">quantite_Actuel</label>
+        <input type="text" id="quantite_Actuel" name="quantite_Actuel" required formControlName="quantite_Actuel">
+      </div>
+      <div class="form-group">
+        <label for="fourniseur">fourniseur</label>
+        <input type="text" id="fourniseur" name="fourniseur" required formControlName="fourniseur">
+      </div>
+
+      <button type="submit" (click)="updateStockage()" >Modifier</button>
+    </form>
+  </div>
+</div>

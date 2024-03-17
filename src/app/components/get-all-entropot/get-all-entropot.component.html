@@ -1,0 +1,51 @@
+<button class="btn-new" routerLink="/entropot">Post New Entropot</button>
+<br>
+<br>
+
+<input  placeholder="Search" type="text" [(ngModel)]="name" (input)="search()"/>
+
+
+<table>
+
+  <thead>
+
+  <tr>
+
+    <th>Nom</th>
+
+    <th>Capacite Total</th>
+
+    <th>Prix</th>
+
+    <th>Nombre Rayon</th>
+
+    <th>adress</th>
+
+    <th>responsable</th>
+
+
+  </tr>
+
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let entropot of entropots">
+
+    <td>{{entropot.name}}</td>
+
+    <td>{{entropot.capaciteTotal}}</td>
+
+    <td>{{entropot.prix}}</td>
+    <td>{{entropot.nombreRayon}}</td>
+
+    <td>{{entropot.adress}}</td>
+
+    <td>{{entropot.responsable}}</td>
+    <td><button class="btn-update" routerLink="/entropot/{{entropot.id}}">Modifier</button>
+      <button class="btn-delete" (click)="deleteProduct(entropot.id)">Delete</button>
+    </td>
+  </tr>
+
+  </tbody>
+
+</table>

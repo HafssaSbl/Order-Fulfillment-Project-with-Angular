@@ -1,0 +1,45 @@
+<button class="btn-new" routerLink="/commande">Post New Commande</button>
+<br>
+<br>
+
+<input  placeholder="Search" type="text" [(ngModel)]="nameClient" (input)="search()"/>
+
+
+<table>
+
+  <thead>
+
+  <tr>
+
+    <th>nameClient</th>
+
+    <th>num_tel</th>
+
+    <th>adress</th>
+
+    <th>Quantit_produit</th>
+
+  </tr>
+
+  </thead>
+
+  <tbody>
+
+  <tr *ngFor="let commande of commandes">
+
+    <td>{{commande.nameClient}}</td>
+
+    <td>{{commande.num_tel}}</td>
+
+    <td>{{commande.adress}}</td>
+
+    <td>{{commande.Quantit_produit}}</td>
+
+    <td><button class="btn-update" routerLink="/commande/{{commande.id}}">Modifier</button>
+      <button class="btn-delete" (click)="deleteCommande(commande.id)">Delete</button>
+    </td>
+  </tr>
+
+  </tbody>
+
+</table>

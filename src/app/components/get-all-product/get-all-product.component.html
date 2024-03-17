@@ -1,0 +1,52 @@
+<button class="btn-new" routerLink="/product">Post New product</button>
+<br>
+<br>
+
+<input  placeholder="Search" type="text" [(ngModel)]="nom" (input)="search()"/>
+
+
+<table>
+
+  <thead>
+
+  <tr>
+
+    <th>Nom</th>
+
+    <th>Description</th>
+
+    <th>Prix</th>
+
+    <th>Quantité</th>
+    <th>Fournisseur</th>
+
+    <th>Date ajout</th>
+
+    <th>Action</th>
+
+  </tr>
+
+  </thead>
+
+  <tbody>
+
+  <tr *ngFor="let product of products">
+
+    <td>{{product.name}}</td>
+
+    <td>{{product.description}}</td>
+
+    <td>{{product.prix}}</td>
+    <td>{{product.quantite_en_stock}}</td>
+
+    <td>{{product.fournisseur}}</td>
+
+    <td>{{product.date_ajout}}</td>
+    <td><button class="btn-update" routerLink="/product/{{product.id}}">Modifier</button>
+      <button class="btn-delete" (click)="deleteProduct(product.id)">Delete</button>
+    </td>
+  </tr>
+
+  </tbody>
+
+</table>

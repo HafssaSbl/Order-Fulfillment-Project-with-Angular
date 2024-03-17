@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="form-container">
+    <h2 class="form-title">Modifier un Commande</h2>
+    <form [formGroup]="updateCommandeForm">
+      <div class="form-group">
+        <label for="nameClient">nameClient</label>
+        <input type="text" id="nameClient" name="nameClient" required formControlName="nameClient">
+      </div>
+      <div class="form-group">
+        <label for="num_tel">num_tel</label>
+        <input type="text" id="num_tel" name="num_tel" required formControlName="num_tel">
+      </div>
+      <div class="form-group">
+        <label for="adress">adress</label>
+        <input type="text" id="adress" name="adress" required formControlName="adress">
+      </div>
+      <div class="form-group">
+        <label for="Quantit_produit">Quantit_produit</label>
+        <input type="number" id="Quantit_produit" name="Quantit_produit" required formControlName="Quantit_produit">
+      </div>
+
+      <button type="submit" (click)="updateCommande()" >Modifier</button>
+    </form>
+  </div>
+</div>

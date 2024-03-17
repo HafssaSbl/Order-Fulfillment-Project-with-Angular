@@ -1,0 +1,43 @@
+<button class="btn-new" routerLink="/emballage">Post New emballage</button>
+<br>
+<br>
+
+<input  placeholder="Search" type="text" [(ngModel)]="type_emballage" (input)="search()"/>
+
+
+<table>
+
+  <thead>
+
+  <tr>
+
+    <th>type_emballage</th>
+
+    <th>taille</th>
+
+    <th>cout</th>
+
+    <th>effecacite</th>
+
+
+  </tr>
+
+  </thead>
+
+  <tbody>
+
+  <tr *ngFor="let emballage of emballages">
+
+    <td>{{emballage.type_emballage}}</td>
+    <td>{{emballage.taille}}</td>
+    <td>{{emballage.cout}}</td>
+    <td>{{emballage.effecacite}}</td>
+
+    <td><button class="btn-update" routerLink="/emballage/{{emballage.id}}">Modifier</button>
+      <button class="btn-delete" (click)="deleteEmpallage(emballage.id)">Delete</button>
+    </td>
+  </tr>
+
+  </tbody>
+
+</table>
